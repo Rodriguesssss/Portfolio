@@ -158,24 +158,33 @@ footer {
   box-shadow: 0 8px 16px 0 #007BFF;
 }
 
-.contact-form input {
-  background-color: aliceblue;
-  color: black;
-  border-radius: 5px;
-  border: none;
-  padding: 8px;
+.field {
+  margin-bottom: 10px;
 }
 
-.contact-form .submit-btn {
-  background-color: #007BFF;
-  color: aliceblue;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+.field label {
+  display: block;
+  font-size: 12px;
+  color: #777;
 }
 
-.contact-form .submit-btn:hover {
+.field input {
+  display: block;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #4460AA;
+  color: #fff;
+  border: none
+}
+
+input[type="submit"]:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
 }
 
@@ -224,7 +233,7 @@ footer {
     padding: 15px;
   }
 
-  .contact-form input, .contact-form .submit-btn {
+  .field input, input[type="submit"], input[type="submit"]:hover {
     font-size: 0.9rem;
   }
 
