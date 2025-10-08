@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(20, 20, 20);
+  padding: 0;
+  text-align: center;
+  color: aliceblue;
+  font-family: Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: aliceblue;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: aliceblue;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.pagination li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  border: 1px solid gray;
+  color: aliceblue;
+  margin: 4px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination li a.active {
+  background-color: aliceblue;
+  color: rgb(20, 20, 20);
+}
+
+.pagination li a:hover:not(.active) {
+  background-color: lightgray;
+}
+
+.top-bar {
+  margin: 0 auto 20px auto;
+  max-width: 1200px;
+  background-color: rgb(20, 20, 20);
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid aliceblue;
+}
+
+.back-arrow img {
+  height: 30px;
+  width: auto;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.back-arrow img:hover {
+  opacity: 0.6;
+}
+
+div.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  max-width: 1200px;
+}
+
+div.gallery-item {
+  border: 1px solid #ccc;
+  background-color: #222;
+  border-radius: 5px;
+  transition: border 0.3s;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #111;
+  display: block;
+}
+
+div.gallery-item:hover {
+  border: 1px solid #777;
+}
+
+div.gallery-item div.desc {
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: rgb(20, 20, 20);
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  border-top: 1px solid aliceblue;
+}
+
+.footer img {
+  max-width: 200px;
+  height: auto;
+}
+
+.footer img:hover {
+  background-color: #777;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 15px;
+  }
+
+  .back-arrow img {
+    height: 25px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1 / 1;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 10px;
+  }
+
+  .back-arrow img {
+    height: 20px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1 / 1;
+  }
+
+  .footer img {
+    max-width: 120px;
+  }
+}
