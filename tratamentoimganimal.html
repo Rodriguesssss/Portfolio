@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/blackrr.ico">
+    <link rel="stylesheet" href="Css/tratamentoimgstyle.css">
+    <title>Tratamento de Imagem</title>
+</head>
+<body>
+ <div class="top-bar">
+  <a href="index.html#projetos" class="back-arrow">
+    <img src="Img/seta.png" alt="Voltar">
+  </a>
+</div>
+    <div class="gallery" id="galerias">
+
+<div class="gallery-item">
+  <a target="_blank" href="animal1.html">
+    <img src="Img/190501-green-sea-turtle-mn-1440_c.jpg" alt="Animal 1" width="600" height="400">
+  </a>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="animal2.html">
+    <img src="Img/288-2883655_leopard-hd.jpg" alt="Animal 2" width="600" height="400">
+  </a>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="animal3.html">
+    <img src="Img/animals-1-1410120.jpg" alt="Animal 3" width="600" height="400">
+  </a>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="animal4.html">
+    <img src="Img/Duck-1-650x425.jpg" alt="Animal 4" width="600" height="400">
+  </a>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="animal5.html">
+    <img src="Img/Duck-3-650x425.jpg" alt="Animal 5" width="600" height="400">
+  </a>
+</div>
+</div>
+<ul class="pagination">
+  <li><a href="tratamentoimgpessoa.html">&laquo;</a></li>
+  <li><a href="tratamentoimgpessoa.html">1</a></li>
+  <li><a class="active"  href="tratamentoimganimal.html">2</a></li>
+  <li><a href="tratamentoimganimal.html">&raquo;</a></li>
+</ul>
+    <footer>
+        <div class="footer">
+            <a href="index.html"><img src="Img/white.png" alt="Logo"></a>
+            <p>copyright<span>&copy</span><br>by RRodrigues</p>
+        </div>
+    </footer>
+</body>
+<script>
+        const links = document.querySelectorAll("#galerias a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const url = this.getAttribute("href");
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 400);
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/blackrr.ico">
+    <link rel="stylesheet" href="Css/homestyle.css">
+    <title>RRodrigues</title>
+</head>
+<body>
+    <ul class="topnav">
+        <li class="logo">
+            <a href="#"><img src="Img/white.png" alt="Logo"></a>
+        </li>
+        <div class="menu">
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contacto">Contacta-me</a></li>
+        </div>
+    </ul>
+    <div class="container">
+        <div class="side">
+            <img src="Img/white.png" alt="">
+            <p>Olá! Chamo-me Rodrigo Rodrigues e sou um técnico de multimédia que adora design, audiovisual e tecnologia em geral.</p>
+            <p>Fique à vontade para explorar o meu portfólio e conhecer um pouco mais do meu trabalho!</p>
+            <p>Não hesite em explorar e descobrir. Sinta-se à vontade para entrar em contacto.</p>
+        </div>
+        <div class="main">
+            <img src="Img/eu1.1.png" alt="">
+        </div>
+    </div>
+    <h1 id="projetos">Projetos</h1>
+    <div class="projetos">
+        <div class="gallery">
+            <a href="cartazes.html"><img src="Img/Cartazes.png" alt=""></a>
+        </div>
+        <div class="gallery">
+            <a href="comunicacaoproduto.html"><img src="Img/Comunicação de Produto.png" alt=""></a>
+        </div>
+        <div class="gallery">
+            <a href="logos.html"><img src="Img/Logos.png" alt=""></a>
+        </div>
+        <div class="gallery">
+            <a href="lyrics.html"><img src="Img/Lyrics.png" alt=""></a>
+        </div>
+        <div class="gallery">
+            <a href="tratamentoimgpessoa.html"><img src="Img/Tratamento de imagem.png" alt=""></a>
+        </div>
+        <div class="gallery">
+            <a href="websites.html"><img src="Img/WebSites.png" alt=""></a>
+        </div>
+    </div>
+    <h1 id="contacto">Contacta-me</h1>
+    <form form id="contact-form" class="contact-form">
+  <div class="field">
+    <label for="user_name">user_name</label>
+    <input type="text" name="user_name" id="user_name">
+  </div>
+  <div class="field">
+    <label for="user_email">user_email</label>
+    <input type="text" name="user_email" id="user_email">
+  </div>
+  <div class="field">
+    <label for="message">message</label>
+    <input type="text" name="message" id="message">
+  </div>
+
+  <input type="submit" id="button" value="Send Email" >
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('8n1VrNQ7zAMyfaFl8')
+</script>
+    <footer>
+        <div class="footer">
+            <a href="index.html"><img src="Img/white.png" alt="Logo"></a>
+            <p>copyright<span>&copy</span><br>by RRodrigues</p>
+        </div>
+    </footer>
+</body>
+    <script>
+        const links = document.querySelectorAll("#projetos a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const url = this.getAttribute("href");
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 2000);
+            });
+        });
+    </script>
+    <script> const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_jbhprb5';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+    </script>
+</html>
